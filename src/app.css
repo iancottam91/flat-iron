@@ -1,3 +1,62 @@
-body{
-    background: pink;
+/* Base site styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    background: #ddd;
+}
+
+header {
+    display: flex;
+    height: 50px;
+    background: #666;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-weight: normal;
+    margin: 0 10px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+/* 3 column Flex box layout styles */
+.twitter-profile-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    max-width: 1200px;
+}
+
+.twitter-profile-item {
+    flex-basis: calc(100% - 20px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis */
+    margin: 10px;
+    padding: 15px;
+    background: white;
+}
+
+@media only screen and (min-width : 480px) {
+    .twitter-profile-item {
+        flex-basis: calc(50% - 20px); 
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .twitter-profile-item {
+        flex-basis: calc(33.3% - 20px); 
+    }
+}
+
+/* Twitter profile block styles */
+.twitter-profile-item img {
+    width: 100%;
 }
