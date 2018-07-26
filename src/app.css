@@ -23,9 +23,14 @@ header h1 {
     margin: 0 10px;
 }
 
+.main-content-container {
+    display: flex;
+    justify-content: center;
+}
 .main-content {
     display: flex;
     justify-content: center;
+    max-width: 1200px;
 }
 
 /* 3 column Flex box layout styles */
@@ -34,7 +39,6 @@ header h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px;
-    max-width: 1200px;
 }
 
 .twitter-profile-item {
@@ -56,7 +60,94 @@ header h1 {
     }
 }
 
+/* Tweet list layout */
+.tweets-displayed .twitter-profile-grid {
+    /* flex-basis: calc(66.6% - 20px); */
+    flex: 2
+}
+
+.tweets-displayed .tweet-list {
+    /* flex-basis: calc(33.3% - 20px); */
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Twitter list styles */
+.tweet-list {
+    background: white;
+    padding: 15px;
+}
+
+.tweet-list-item {
+    margin-bottom: 20px;
+}
+
+.tweeter-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.tweet-list ul {
+    list-style: none;
+}
+
+.tweet-list .twitter-profile-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+}
+
+.tweet-list .twitter-name {
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+.tweet-list .twitter-handle {
+    padding: 0 5px;
+    display: none;
+}
+
+@media only screen and (min-width : 768px) {
+    .tweet-list .twitter-handle {
+        display: block;
+    }
+}
+
+.tweet-list .tweet-time {
+    color: #657786;
+}
+
+.tweet-text {
+    font-size: 14px;
+}
+
 /* Twitter profile block styles */
 .twitter-profile-item img {
     width: 100%;
+}
+
+.twitter-name {
+    color: #2E2828;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.twitter-profile-item .twitter-name {
+    margin: 6px 0;
+}
+
+.twitter-handle {
+    color: #657786;
+}
+
+.twitter-profile-item .twitter-handle {
+    margin-bottom: 10px;
+}
+
+.twitter-bio {
+    font-size: 14px;
 }
