@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.static('src'))
 
 // route for the twitter data
 const Twit = require('twit');
