@@ -49,13 +49,22 @@ header h1 {
 }
 
 @media only screen and (min-width : 480px) {
-    .twitter-profile-item {
+    .tweets-not-displayed .twitter-profile-item {
         flex-basis: calc(50% - 20px); 
     }
 }
 
 @media only screen and (min-width : 768px) {
-    .twitter-profile-item {
+    .tweets-displayed .twitter-profile-item {
+        flex-basis: calc(50% - 20px); 
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+    .tweets-not-displayed .twitter-profile-item {
+        flex-basis: calc(33.3% - 20px); 
+    }
+    .tweets-displayed .twitter-profile-item {
         flex-basis: calc(33.3% - 20px); 
     }
 }
