@@ -30,13 +30,15 @@ const DataModule = () => {
 
 const RenderModule = () => {
 
-    const render = (tweets) => {
+    const renderTweets = (tweets) => {
         const tweetListContainer = document.createElement('div');
         tweetListContainer.classList.add('tweet-list');
         const tweetList = document.createElement('ul');
+        for (var i=0;i<tweets.length;i++) {
+            tweetList.appendChild(createTweetItem(tweets[i]));
+        }
         tweetListContainer.appendChild(tweetList);
-        console.log(tweets[0]);
-        createTweetItem(tweets[0]);
+        document.getElementById('main-content').appendChild(tweetListContainer);
     }
 
     const createTweetItem = (tweet) => {
@@ -45,40 +47,77 @@ const RenderModule = () => {
         
         const tweetDetails = document.createElement('div');
         tweetDetails.classList.add('tweeter-details');
-        tweetItem.appendChild(tweetDetails);
+        
+        const profileImg = document.createElement('img');
+        profileImg.classList.add('twitter-profile-img');
+        profileImg.setAttribute('src', tweet.profileImg);
+        tweetDetails.appendChild(profileImg);
+
+        const tweetName = document.createElement('p');
+        tweetName.classList.add('twitter-name');
+        tweetName.innerHTML = tweet.userName
+        tweetDetails.appendChild(tweetName);
+
+        const tweetHandle = document.createElement('p');
+        tweetHandle.classList.add('twitter-handle');
+        tweetHandle.innerHTML = tweet.screenName
+        tweetDetails.appendChild(tweetHandle);
+
+        // const tweetTime = document.createElement('p');
+        // tweetTime.classList.add('tweet-time');
+        // tweetTime.innerHTML = tweet.time;
+        // tweetDetails.appendChild(tweetTime);
 
         const tweetText = document.createElement('p');
         tweetText.classList.add('tweet-text');
         tweetText.innerHTML = tweet.text
+        
+        tweetItem.appendChild(tweetDetails);
         tweetItem.appendChild(tweetText);
 
-        console.log(tweetItem);
+        return tweetItem;
     }
 
     return Object.freeze({
-        render
+        renderTweets
     })
 
 }
 
-const dataModule = DataModule();
-const renderModule = RenderModule();
+const attachInteraction = () => {
+    const dataModule = DataModule();
+    const renderModule = RenderModule();
 
-dataModule.fetchTweets('jbairstow21').then((tweets) => {
-    console.log(tweets);
-    renderModule.render(tweets);
-    // use the render module now
-});
+    const tweetItems = document.getElementsByClassName('twitter-profile-item');
+
+    for(let i=0;i<tweetItems.length;i++) {
+        const tweetItem = tweetItems[i];
+        tweetItem.addEventListener('click', () => {
+            dataModule
+            .fetchTweets('jbairstow21')
+            .then((tweets) => {
+                renderModule.renderTweets(tweets);
+            });
+        })
+    }
+    
+}
+
+attachInteraction();
+
+
 
 // dataModule.fetchTweets('jbairstoqweww21');
 // dataModule.fetchTweets();
+// const dataModule = DataModule();
+// const renderModule = RenderModule();
 
-// renderModule.render();
+// dataModule.fetchTweets('jbairstow21').then((tweets) => {
+//     renderModule.renderTweets(tweets);
+// });
 
-// load the data
-// extract the needed fields
 // populate the page
 // attach functionality to tiles
 // dont use <a> tag
 
-// tests
+// tests`

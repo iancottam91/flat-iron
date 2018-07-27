@@ -85,7 +85,11 @@ header h1 {
 .tweets-displayed .tweet-list {
     /* flex-basis: calc(33.3% - 20px); */
     flex: 1;
+    height: calc(100vh - 90px);
     margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: auto;
 }
 
 /* Twitter list styles */
