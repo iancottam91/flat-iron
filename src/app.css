@@ -44,8 +44,15 @@ header h1 {
 .twitter-profile-item {
     flex-basis: calc(100% - 20px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis */
     margin: 10px;
-    padding: 15px;
+    padding: 10px;
+    border: 5px solid white;
     background: white;
+    color: initial;
+    text-decoration: none;
+}
+
+.twitter-profile-item:hover {
+    border: 5px solid #00c3ef;
 }
 
 @media only screen and (min-width : 480px) {
