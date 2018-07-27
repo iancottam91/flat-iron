@@ -78,5 +78,7 @@ dataModule.fetchTweets('jbairstow21').then((tweets) => {
 // load the data
 // extract the needed fields
 // populate the page
+// attach functionality to tiles
+// dont use <a> tag
 
 // tests
