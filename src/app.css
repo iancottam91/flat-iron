@@ -30,6 +30,7 @@ header h1 {
 .main-content {
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* stop the stretching */
     max-width: 1200px;
 }
 
@@ -39,11 +40,14 @@ header h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px;
+    margin-top: 20px;
 }
 
 .twitter-profile-item {
     flex-basis: calc(100% - 20px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis */
     margin: 10px;
+    margin-bottom: 20px;
+    margin-top: 0;
     padding: 10px;
     border: 5px solid white;
     background: white;
@@ -78,7 +82,9 @@ header h1 {
 
 /* Tweet list layout */
 .tweets-displayed .twitter-profile-grid {
-    flex: 1
+    flex: 1;
+    height: calc(100vh - 90px);
+    overflow: auto;
 }
 
 @media only screen and (min-width : 768px) {
@@ -121,6 +127,7 @@ header h1 {
 }
 
 .tweet-list .twitter-profile-img {
+    min-width: 48px;
     width: 48px;
     height: 48px;
     border-radius: 48px;
