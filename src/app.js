@@ -58,20 +58,25 @@ const RenderModule = () => {
         
         const tweetDetails = document.createElement('div');
         tweetDetails.classList.add('tweeter-details');
+
+        const tweetProfile = document.createElement('div');
+        tweetProfile.classList.add('tweeter-profile');
         
         const profileImg = document.createElement('img');
         profileImg.classList.add('twitter-profile-img');
         profileImg.setAttribute('src', tweet.profileImg);
-        tweetDetails.appendChild(profileImg);
+        tweetProfile.appendChild(profileImg);
 
         const tweetName = document.createElement('p');
         tweetName.classList.add('twitter-name');
         tweetName.innerHTML = tweet.userName
-        tweetDetails.appendChild(tweetName);
+        tweetProfile.appendChild(tweetName);
 
         const tweetTime = document.createElement('p');
         tweetTime.classList.add('tweet-time');
         tweetTime.innerHTML = `${utils.timeSince(tweet.time)} ago`;
+
+        tweetDetails.appendChild(tweetProfile);
         tweetDetails.appendChild(tweetTime);
 
         const tweetText = document.createElement('p');

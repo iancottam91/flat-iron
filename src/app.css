@@ -104,6 +104,7 @@ header h1 {
 
 .tweeter-details {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
@@ -119,30 +120,28 @@ header h1 {
     width: 48px;
     height: 48px;
     border-radius: 48px;
+    margin-bottom: 5px;
 }
 
 .tweet-list .twitter-name {
     font-size: 16px;
+    margin-left: 10px;
     padding: 0 5px;
-}
-
-.tweet-list .twitter-handle {
-    padding: 0 5px;
-    display: none;
-}
-
-@media only screen and (min-width : 768px) {
-    .tweet-list .twitter-handle {
-        display: block;
-    }
+    margin-bottom: 5px;
 }
 
 .tweet-list .tweet-time {
     color: #657786;
+    margin-bottom: 5px;
 }
 
 .tweet-text {
     font-size: 14px;
+}
+
+.tweeter-profile {
+    display: flex;
+    align-items: center;
 }
 
 /* Twitter profile block styles */
