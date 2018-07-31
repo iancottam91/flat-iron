@@ -78,12 +78,16 @@ header h1 {
 
 /* Tweet list layout */
 .tweets-displayed .twitter-profile-grid {
-    /* flex-basis: calc(66.6% - 20px); */
-    flex: 2
+    flex: 1
+}
+
+@media only screen and (min-width : 768px) {
+    .tweets-displayed .twitter-profile-item {
+        flex: 2; 
+    }
 }
 
 .tweets-displayed .tweet-list {
-    /* flex-basis: calc(33.3% - 20px); */
     flex: 1;
     height: calc(100vh - 90px);
     margin-right: 20px;

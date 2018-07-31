@@ -33,6 +33,10 @@ const RenderModule = () => {
     const utils = Utils();
 
     const renderTweets = (tweets) => {
+        // add 'tweets-displayed' class
+        document.getElementById('main-content').classList.remove('tweets-not-displayed');
+        document.getElementById('main-content').classList.add('tweets-displayed');
+
         // empty the container first
         const tweetBlock = document.getElementById('tweet-list-block');
         if(tweetBlock) {
