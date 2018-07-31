@@ -30,9 +30,20 @@ const DataModule = () => {
 
 const RenderModule = () => {
 
+    const utils = Utils();
+
     const renderTweets = (tweets) => {
+        // empty the container first
+        const tweetBlock = document.getElementById('tweet-list-block');
+        if(tweetBlock) {
+            tweetBlock.remove();
+        }
+
         const tweetListContainer = document.createElement('div');
+
         tweetListContainer.classList.add('tweet-list');
+        tweetListContainer.id = 'tweet-list-block';
+
         const tweetList = document.createElement('ul');
         for (var i=0;i<tweets.length;i++) {
             tweetList.appendChild(createTweetItem(tweets[i]));
@@ -58,15 +69,10 @@ const RenderModule = () => {
         tweetName.innerHTML = tweet.userName
         tweetDetails.appendChild(tweetName);
 
-        const tweetHandle = document.createElement('p');
-        tweetHandle.classList.add('twitter-handle');
-        tweetHandle.innerHTML = tweet.screenName
-        tweetDetails.appendChild(tweetHandle);
-
-        // const tweetTime = document.createElement('p');
-        // tweetTime.classList.add('tweet-time');
-        // tweetTime.innerHTML = tweet.time;
-        // tweetDetails.appendChild(tweetTime);
+        const tweetTime = document.createElement('p');
+        tweetTime.classList.add('tweet-time');
+        tweetTime.innerHTML = `${utils.timeSince(tweet.time)} ago`;
+        tweetDetails.appendChild(tweetTime);
 
         const tweetText = document.createElement('p');
         tweetText.classList.add('tweet-text');
@@ -90,11 +96,17 @@ const attachInteraction = () => {
 
     const tweetItems = document.getElementsByClassName('twitter-profile-item');
 
+    // loop through tweet tiles and bind blick events
     for(let i=0;i<tweetItems.length;i++) {
         const tweetItem = tweetItems[i];
-        tweetItem.addEventListener('click', () => {
+        tweetItem.addEventListener('click', (e) => {
+
+            // extract twitter handle
+            const twitterHandle = tweetItem.attributes['data-twitter-id'].value;
+
+            // load the tweets
             dataModule
-            .fetchTweets('jbairstow21')
+            .fetchTweets(twitterHandle)
             .then((tweets) => {
                 renderModule.renderTweets(tweets);
             });
@@ -104,20 +116,3 @@ const attachInteraction = () => {
 }
 
 attachInteraction();
-
-
-
-// dataModule.fetchTweets('jbairstoqweww21');
-// dataModule.fetchTweets();
-// const dataModule = DataModule();
-// const renderModule = RenderModule();
-
-// dataModule.fetchTweets('jbairstow21').then((tweets) => {
-//     renderModule.renderTweets(tweets);
-// });
-
-// populate the page
-// attach functionality to tiles
-// dont use <a> tag
-
-// tests`
