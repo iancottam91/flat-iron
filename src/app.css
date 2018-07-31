@@ -67,6 +67,7 @@ header h1 {
 
 @media only screen and (min-width : 768px) {
     .tweets-displayed .twitter-profile-item {
+        flex: 2; 
         flex-basis: calc(50% - 20px); 
     }
 }
@@ -85,12 +86,6 @@ header h1 {
     flex: 1;
     height: calc(100vh - 90px);
     overflow: auto;
-}
-
-@media only screen and (min-width : 768px) {
-    .tweets-displayed .twitter-profile-item {
-        flex: 2; 
-    }
 }
 
 .tweets-displayed .tweet-list {
