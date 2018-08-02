@@ -1,5 +1,6 @@
-const express = require('express');
+const { consumer_key, consumer_secret } = require('./config');
 
+const express = require('express');
 const app = express();
 
 app.use(express.static('src'))
@@ -7,8 +8,8 @@ app.use(express.static('src'))
 // route for the twitter data
 const Twit = require('twit');
 const T = new Twit({
-    consumer_key: 'tEHaaxU8oJ9W0GyJiUfPNTdLR',
-    consumer_secret: '90f5WYiSZq6xwqdhKyRzi0AjhpcNqP5YwNI49aQxkAKWhB08vZ',
+    consumer_key,
+    consumer_secret,
     app_only_auth: true
 })
 
