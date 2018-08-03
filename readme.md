@@ -15,3 +15,4 @@ Finally load up a terminal and run:
 yarn
 yarn start
 ```
+The app will run on port 8080
