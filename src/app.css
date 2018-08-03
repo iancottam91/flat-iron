@@ -177,3 +177,12 @@ header h1 {
 .twitter-bio {
     font-size: 14px;
 }
+
+.twitter-profile-grid-inner {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: -20px;
+}
