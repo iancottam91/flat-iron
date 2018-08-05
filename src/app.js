@@ -56,6 +56,17 @@ const RenderModule = () => {
         document.getElementById('main-content').appendChild(tweetListContainer);
     }
 
+    /*
+    *   @param {Object} tweet
+    * 
+    *   tweet.userName: String
+    *   tweet.screenName: String
+    *   tweet.profileImg: String
+    *   tweet.time: Date String
+    *   tweet.text: String
+    * 
+    */
+
     const createTweetItem = (tweet) => {
         const tweetItem = document.createElement('li');
         tweetItem.classList.add('tweet-list-item');

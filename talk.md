@@ -67,4 +67,19 @@ The answer is freeze is there to ensure that no changes can be made to the objec
 
 2.50
 
-Move onto the RenderModule which is the module we'll use to create the html we need to render our view of the tweets on the right side of the page. That html is going be dynamically generated and we have two function to do this. 
+Move onto the RenderModule which is the module we'll use to create the html we need to render our view of the tweets on the right side of the page. That html is going be dynamically generated and we have two functions to do this, renderTweets and createTweetItem. 
+
+I'm going to start by explaining `createTweetItem` which is used to create the html an individual tweet row, so for one of these tweets. Starting here and finishing here. Now you see that createTweetItem expects one parameter which is tweet and tweet is an object that we created earlier in our dataModule and it will have the format definied in the comment here. We'll use the information from the tweet object to populate our html as we're creating it.
+
+So let have a look at how to do that. Firstly we create a list item, which will be the outermost html element, as you see SHOW THE HTML IN INSPECTOR VIEW and we use document.createElement to do that. document.createElement is a built in JavaScript function that allows to create html elements and it must be provided a tagName for the element you want to create, which in this case is `li`. It returns an Element object and one of the properties on an element object is classList and we can use that to manage that classes on the element. In this case we want to add a class called `tweet-list-item` to allow us to style this item later on and so we use the method `add` to add this class.
+
+few more element...
+img need to add a property..
+tweet name add text
+talk through all of the function...
+
+QUESTION ABOUT WHY THIS IS SUCH A CONVOLUTED WAY OF DOING IT! Answer - it is, and react is an alternative
+
+
+
+
