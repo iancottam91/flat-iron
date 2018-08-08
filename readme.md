@@ -1,4 +1,4 @@
-# Cricket Correspondance App
+# Cricket Correspondence App
 
 This an app to display the latest tweets from 6 prominent cricket twitter profiles.
 
